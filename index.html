@@ -5,8 +5,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>A1 Bed Sheets - Premium Bedding Solutions</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
     <style>
-        /* Global Styles */
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
         :root {
             --primary: #2c3e50;
             --secondary: #3498db;
@@ -16,21 +24,20 @@
             --success: #27ae60;
             --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             --transition: all 0.3s ease;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            --border-radius: 12px;
+            --app-height: 100%;
         }
         
         body {
             background-color: #f8f9fa;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
+            min-height: 100vh;
+            min-height: var(--app-height);
         }
         
+        /* Container */
         .container {
             width: 100%;
             max-width: 1200px;
@@ -45,17 +52,17 @@
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 10px 0;
         }
         
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
         }
         
         .logo {
-            font-size: 1.8rem;
+            font-size: 1.5rem;
             font-weight: 700;
             color: var(--primary);
             text-decoration: none;
@@ -67,13 +74,18 @@
             color: var(--secondary);
         }
         
+        .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+        
         .nav-menu {
             display: flex;
             list-style: none;
         }
         
         .nav-menu li {
-            margin-left: 25px;
+            margin-left: 20px;
         }
         
         .nav-menu a {
@@ -81,6 +93,7 @@
             color: var(--dark);
             font-weight: 500;
             transition: var(--transition);
+            font-size: 0.95rem;
         }
         
         .nav-menu a:hover {
@@ -112,6 +125,7 @@
         .cart-icon {
             position: relative;
             cursor: pointer;
+            margin-left: 10px;
         }
         
         .cart-count {
@@ -129,6 +143,14 @@
             align-items: center;
         }
         
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark);
+            margin-left: 15px;
+        }
+        
         /* Hero Section */
         .hero {
             background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('https://images.unsplash.com/photo-1555041469-a586c61ea9bc?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1200&q=80');
@@ -137,6 +159,8 @@
             color: white;
             padding: 80px 0;
             text-align: center;
+            border-radius: 0 0 var(--border-radius) var(--border-radius);
+            margin: 0 15px 30px;
         }
         
         .hero-content {
@@ -145,12 +169,12 @@
         }
         
         .hero h1 {
-            font-size: 2.8rem;
+            font-size: 2.5rem;
             margin-bottom: 20px;
         }
         
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 30px;
         }
         
@@ -199,7 +223,7 @@
         
         .category-card {
             background: white;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -231,7 +255,7 @@
         
         .product-card {
             background: white;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             overflow: hidden;
             box-shadow: var(--shadow);
             transition: var(--transition);
@@ -314,6 +338,7 @@
             align-items: center;
             font-weight: 500;
             transition: var(--transition);
+            font-size: 0.9rem;
         }
         
         .btn-whatsapp:hover {
@@ -329,6 +354,7 @@
             cursor: pointer;
             font-weight: 500;
             transition: var(--transition);
+            font-size: 0.9rem;
         }
         
         .btn-cart:hover {
@@ -346,7 +372,6 @@
             background: rgba(0, 0, 0, 0.7);
             z-index: 2000;
             overflow-y: auto;
-            padding: 20px 0;
         }
         
         .modal-content {
@@ -354,9 +379,10 @@
             width: 90%;
             max-width: 900px;
             margin: 40px auto;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             overflow: hidden;
             animation: modalFade 0.3s;
+            position: relative;
         }
         
         @keyframes modalFade {
@@ -398,7 +424,7 @@
         
         .modal-product-image {
             width: 100%;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             box-shadow: var(--shadow);
         }
         
@@ -451,6 +477,8 @@
             z-index: 1500;
             transition: var(--transition);
             overflow-y: auto;
+            display: flex;
+            flex-direction: column;
         }
         
         .cart-sidebar.open {
@@ -473,6 +501,8 @@
         
         .cart-items {
             padding: 20px;
+            flex: 1;
+            overflow-y: auto;
         }
         
         .cart-item {
@@ -690,44 +720,6 @@
             transform: scale(1.1);
         }
         
-        /* Responsive Styles */
-        @media (max-width: 992px) {
-            .modal-body {
-                grid-template-columns: 1fr;
-            }
-            
-            .nav-menu {
-                display: none;
-            }
-            
-            .mobile-menu-btn {
-                display: block;
-                font-size: 1.5rem;
-                cursor: pointer;
-                color: var(--dark);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .cart-sidebar {
-                width: 100%;
-                right: -100%;
-            }
-        }
-        
-        /* Mobile Menu */
-        .mobile-menu-btn {
-            display: none;
-        }
-        
         /* Filters */
         .filters {
             display: flex;
@@ -736,7 +728,7 @@
             margin-bottom: 30px;
             padding: 15px;
             background: white;
-            border-radius: 10px;
+            border-radius: var(--border-radius);
             box-shadow: var(--shadow);
         }
         
@@ -758,6 +750,209 @@
             border: 1px solid #ddd;
             border-radius: 5px;
         }
+        
+        /* Mobile App-like Styles */
+        .bottom-nav {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: white;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 900;
+            padding: 10px 0;
+        }
+        
+        .bottom-nav-items {
+            display: flex;
+            justify-content: space-around;
+            list-style: none;
+        }
+        
+        .bottom-nav-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-decoration: none;
+            color: #888;
+            font-size: 0.8rem;
+        }
+        
+        .bottom-nav-item.active {
+            color: var(--secondary);
+        }
+        
+        .bottom-nav-item i {
+            font-size: 1.2rem;
+            margin-bottom: 4px;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .modal-body {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-menu {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .search-bar {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .cart-sidebar {
+                width: 100%;
+                right: -100%;
+            }
+            
+            .bottom-nav {
+                display: block;
+            }
+            
+            .products {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 15px;
+            }
+            
+            .product-card {
+                margin-bottom: 15px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .filters {
+                flex-direction: column;
+            }
+            
+            .hero {
+                margin: 0 0 20px;
+                border-radius: 0;
+                padding: 60px 0;
+            }
+            
+            .section-title {
+                margin: 30px 0 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo span {
+                display: none;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+            
+            .products {
+                grid-template-columns: 1fr;
+            }
+            
+            .modal-content {
+                width: 95%;
+                margin: 20px auto;
+            }
+            
+            .modal-actions {
+                flex-direction: column;
+            }
+            
+            .btn {
+                padding: 10px 20px;
+            }
+            
+            .whatsapp-float {
+                bottom: 70px;
+                right: 15px;
+                width: 50px;
+                height: 50px;
+                font-size: 1.5rem;
+            }
+        }
+        
+        /* Mobile Menu */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 80%;
+            height: 100%;
+            background: white;
+            z-index: 1100;
+            transition: var(--transition);
+            overflow-y: auto;
+            box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .mobile-menu.open {
+            left: 0;
+        }
+        
+        .mobile-menu-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .close-menu {
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: #888;
+        }
+        
+        .mobile-nav-menu {
+            list-style: none;
+            padding: 20px;
+        }
+        
+        .mobile-nav-menu li {
+            margin-bottom: 15px;
+        }
+        
+        .mobile-nav-menu a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 1.1rem;
+            display: block;
+            padding: 10px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+        }
+        
+        .overlay.open {
+            display: block;
+        }
     </style>
 </head>
 <body>
@@ -765,7 +960,10 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo">A1<span>BedSheets</span></a>
+                <a href="#" class="logo">
+                    <i class="fas fa-bed"></i>
+                    <span>A1BedSheets</span>
+                </a>
                 
                 <ul class="nav-menu">
                     <li><a href="#">Home</a></li>
@@ -784,14 +982,34 @@
                         <i class="fas fa-shopping-cart"></i>
                         <span class="cart-count">0</span>
                     </div>
-                </div>
-                
-                <div class="mobile-menu-btn">
-                    <i class="fas fa-bars"></i>
+                    
+                    <div class="mobile-menu-btn" id="mobileMenuBtn">
+                        <i class="fas fa-bars"></i>
+                    </div>
                 </div>
             </div>
         </div>
     </header>
+    
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <div class="mobile-menu-header">
+            <a href="#" class="logo">
+                <i class="fas fa-bed"></i>
+                <span>A1BedSheets</span>
+            </a>
+            <span class="close-menu" id="closeMenu">&times;</span>
+        </div>
+        <ul class="mobile-nav-menu">
+            <li><a href="#">Home</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#categories">Categories</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="https://www.facebook.com/a1bedsheets/" target="_blank">Facebook</a></li>
+        </ul>
+    </div>
+    
+    <div class="overlay" id="overlay"></div>
     
     <!-- Hero Section -->
     <section class="hero">
@@ -1077,6 +1295,42 @@
         </div>
     </div>
     
+    <!-- Bottom Navigation (Mobile Only) -->
+    <nav class="bottom-nav">
+        <ul class="bottom-nav-items">
+            <li>
+                <a href="#" class="bottom-nav-item active">
+                    <i class="fas fa-home"></i>
+                    <span>Home</span>
+                </a>
+            </li>
+            <li>
+                <a href="#categories" class="bottom-nav-item">
+                    <i class="fas fa-th-large"></i>
+                    <span>Categories</span>
+                </a>
+            </li>
+            <li>
+                <a href="#products" class="bottom-nav-item">
+                    <i class="fas fa-shopping-bag"></i>
+                    <span>Products</span>
+                </a>
+            </li>
+            <li>
+                <a href="#contact" class="bottom-nav-item">
+                    <i class="fas fa-user"></i>
+                    <span>Account</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="bottom-nav-item" id="bottomCartBtn">
+                    <i class="fas fa-shopping-cart"></i>
+                    <span>Cart</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    
     <!-- Footer -->
     <footer id="contact">
         <div class="container">
@@ -1187,14 +1441,28 @@
         const cartItemsContainer = document.getElementById('cartItems');
         const cartTotalElement = document.getElementById('cartTotal');
         const cartCountElement = document.querySelector('.cart-count');
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const closeMenu = document.getElementById('closeMenu');
+        const overlay = document.getElementById('overlay');
+        const bottomCartBtn = document.getElementById('bottomCartBtn');
         
         // Cart array to store products
         let cart = [];
         
+        // Set app height for mobile
+        function setAppHeight() {
+            const doc = document.documentElement;
+            doc.style.setProperty('--app-height', `${window.innerHeight}px`);
+        }
+        
         // Event Listeners
         document.addEventListener('DOMContentLoaded', () => {
             initializeApp();
+            setAppHeight();
         });
+        
+        window.addEventListener('resize', setAppHeight);
         
         // Initialize the application
         function initializeApp() {
@@ -1242,20 +1510,49 @@
             // Cart icon click
             cartIcon.addEventListener('click', () => {
                 cartSidebar.classList.add('open');
+                overlay.classList.add('open');
+            });
+            
+            // Bottom cart button click
+            bottomCartBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                cartSidebar.classList.add('open');
+                overlay.classList.add('open');
             });
             
             // Close cart
             closeCart.addEventListener('click', () => {
                 cartSidebar.classList.remove('open');
+                overlay.classList.remove('open');
             });
             
             // Close modal
             closeModal.addEventListener('click', () => {
                 productModal.style.display = 'none';
+                overlay.classList.remove('open');
             });
             
             // Checkout button
             checkoutBtn.addEventListener('click', checkout);
+            
+            // Mobile menu
+            mobileMenuBtn.addEventListener('click', () => {
+                mobileMenu.classList.add('open');
+                overlay.classList.add('open');
+            });
+            
+            closeMenu.addEventListener('click', () => {
+                mobileMenu.classList.remove('open');
+                overlay.classList.remove('open');
+            });
+            
+            // Overlay click
+            overlay.addEventListener('click', () => {
+                cartSidebar.classList.remove('open');
+                mobileMenu.classList.remove('open');
+                productModal.style.display = 'none';
+                overlay.classList.remove('open');
+            });
             
             // Initialize filters
             setupFilters();
@@ -1290,6 +1587,7 @@
             
             // Show modal
             productModal.style.display = 'block';
+            overlay.classList.add('open');
         }
         
         // Get product price by SKU
@@ -1468,15 +1766,16 @@
             // Create notification element
             const notification = document.createElement('div');
             notification.style.position = 'fixed';
-            notification.style.bottom = '20px';
+            notification.style.bottom = '80px';
             notification.style.left = '50%';
             notification.style.transform = 'translateX(-50%)';
             notification.style.backgroundColor = '#27ae60';
             notification.style.color = 'white';
-            notification.style.padding = '10px 20px';
-            notification.style.borderRadius = '5px';
+            notification.style.padding = '12px 24px';
+            notification.style.borderRadius = '50px';
             notification.style.boxShadow = '0 3px 10px rgba(0, 0, 0, 0.2)';
             notification.style.zIndex = '2000';
+            notification.style.fontSize = '0.9rem';
             notification.textContent = message;
             
             document.body.appendChild(notification);
