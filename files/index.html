@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nafees Shaikh — Data Scientist & Python Developer</title>
+  <meta name="description" content="Portfolio of Nafees Shaikh — Data Analyst, Data Scientist & Python Developer based in Mumbai, India." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@300;400;500&family=Inter:wght@300;400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<!-- ===== CANVAS BACKGROUND ===== -->
+<canvas id="bgCanvas"></canvas>
+
+<!-- ===== CURSOR ===== -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- ===== LOADER ===== -->
+<div class="loader" id="loader">
+  <div class="loader-inner">
+    <div class="loader-bar"></div>
+    <span class="loader-text">INITIALIZING<span class="blink">_</span></span>
+  </div>
+</div>
+
+<!-- ===== NAV ===== -->
+<nav class="nav" id="nav">
+  <a class="nav-logo" href="#hero">NS<span class="accent">.</span></a>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certificates">Certs</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#achievements">Awards</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Hire Me</a>
+  <button class="hamburger" id="hamburger" aria-label="Menu">
+    <span></span><span></span><span></span>
+  </button>
+</nav>
+
+<!-- ===== MOBILE MENU ===== -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#about" class="mob-link">About</a></li>
+    <li><a href="#skills" class="mob-link">Skills</a></li>
+    <li><a href="#projects" class="mob-link">Projects</a></li>
+    <li><a href="#certificates" class="mob-link">Certs</a></li>
+    <li><a href="#experience" class="mob-link">Experience</a></li>
+    <li><a href="#achievements" class="mob-link">Awards</a></li>
+    <li><a href="#contact" class="mob-link">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ===== FLOATING SOCIALS ===== -->
+<div class="float-socials">
+  <a href="https://linkedin.com/in/nafees-shaikh-441405251" target="_blank" class="float-icon" aria-label="LinkedIn">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+  </a>
+  <a href="https://github.com/nafees-shaikh" target="_blank" class="float-icon" aria-label="GitHub">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+  </a>
+  <a href="mailto:nafisshaikh114@gmail.com" class="float-icon" aria-label="Email">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M24 5.457v13.909c0 .904-.732 1.636-1.636 1.636h-3.819V11.73L12 16.64l-6.545-4.91v9.273H1.636A1.636 1.636 0 010 19.366V5.457c0-.9.734-1.636 1.636-1.636h.91L12 10.09l9.455-6.27h.909A1.636 1.636 0 0124 5.457z"/></svg>
+  </a>
+  <a href="https://wa.me/919284861005" target="_blank" class="float-icon" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  </a>
+</div>
+
+<!-- ===== HERO ===== -->
+<section class="hero" id="hero">
+  <div class="hero-content">
+    <div class="hero-badge reveal-fade">
+      <span class="badge-dot"></span>
+      Available for Opportunities
+    </div>
+    <p class="hero-greeting reveal-fade" style="--d:0.1s">Mumbai, India 🇮🇳</p>
+    <h1 class="hero-name reveal-fade" style="--d:0.2s">Nafees<br /><span class="hero-name-accent">Shaikh</span></h1>
+    <div class="hero-title reveal-fade" style="--d:0.35s">
+      <span class="typed-prefix">I build </span>
+      <span class="typed-text" id="typed"></span>
+      <span class="typed-cursor">|</span>
+    </div>
+    <p class="hero-desc reveal-fade" style="--d:0.5s">
+      B.Sc. Data Science Graduate · 18+ Projects · 18+ Certifications<br />
+      Turning raw data into intelligent decisions.
+    </p>
+    <div class="hero-btns reveal-fade" style="--d:0.65s">
+      <a href="#projects" class="btn-primary">View My Work</a>
+      <a href="#contact" class="btn-outline">Let's Connect</a>
+    </div>
+    <div class="hero-stats reveal-fade" style="--d:0.8s">
+      <div class="stat">
+        <span class="stat-num" data-target="18">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Projects</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num" data-target="18">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Certificates</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num" data-target="16">0</span><span class="stat-plus">+</span>
+        <span class="stat-label">Skills</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-num" data-target="3">0</span><span class="stat-plus"></span>
+        <span class="stat-label">Awards</span>
+      </div>
+    </div>
+  </div>
+  <div class="hero-visual">
+    <div class="hex-grid">
+      <div class="hex h1"><span>Python</span></div>
+      <div class="hex h2"><span>SQL</span></div>
+      <div class="hex h3"><span>ML</span></div>
+      <div class="hex h4"><span>AI</span></div>
+      <div class="hex h5"><span>Power BI</span></div>
+      <div class="hex h6"><span>OpenCV</span></div>
+    </div>
+    <div class="orbit-ring ring1"></div>
+    <div class="orbit-ring ring2"></div>
+    <div class="orbit-dot od1"></div>
+    <div class="orbit-dot od2"></div>
+    <div class="orbit-dot od3"></div>
+    <div class="avatar-glow"></div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section class="section" id="about">
+  <div class="container">
+    <div class="section-tag reveal-fade">// about_me</div>
+    <h2 class="section-title reveal-fade">Who Am I<span class="accent">?</span></h2>
+    <div class="about-grid">
+      <div class="about-text reveal-left">
+        <p>Hi, I'm <strong>Nafees Shaikh</strong> — a freshly graduated <strong>B.Sc. Data Science</strong> professional from Mumbai with a passion for building intelligent systems that solve real-world problems.</p>
+        <p>My work spans from <strong>machine learning models</strong> and <strong>computer vision</strong> to <strong>interactive dashboards</strong> and <strong>full-stack data applications</strong>. I believe data is the new oil — and I know how to refine it.</p>
+        <p>With 18+ projects under my belt and certifications from top platforms, I bring both <strong>theoretical depth</strong> and <strong>hands-on practical experience</strong> to every challenge.</p>
+        <div class="about-chips">
+          <span class="chip">🎓 B.Sc. Data Science 2025</span>
+          <span class="chip">📍 Mumbai, India</span>
+          <span class="chip">🚀 Open to Work</span>
+          <span class="chip">💡 Fresher</span>
+        </div>
+      </div>
+      <div class="about-cards reveal-right">
+        <div class="about-card">
+          <div class="ac-icon">🧠</div>
+          <h4>Machine Learning</h4>
+          <p>Building predictive models using Scikit-Learn, handling classification, regression & clustering problems.</p>
+        </div>
+        <div class="about-card">
+          <div class="ac-icon">📊</div>
+          <h4>Data Analytics</h4>
+          <p>Extracting insights from complex datasets using Python, SQL, Power BI & Tableau.</p>
+        </div>
+        <div class="about-card">
+          <div class="ac-icon">👁️</div>
+          <h4>Computer Vision</h4>
+          <p>Fingerprint & signature recognition, plant disease detection using OpenCV & deep learning.</p>
+        </div>
+        <div class="about-card">
+          <div class="ac-icon">🌐</div>
+          <h4>App Development</h4>
+          <p>Building GUI applications with Tkinter and full-stack inventory & analytics web apps.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section class="section section-alt" id="skills">
+  <div class="container">
+    <div class="section-tag reveal-fade">// tech_stack</div>
+    <h2 class="section-title reveal-fade">Skills & <span class="accent">Expertise</span></h2>
+    <div class="skills-layout">
+      <div class="skills-bars reveal-left">
+        <h3 class="skills-sub">Core Proficiency</h3>
+        <div class="skill-bar-item" data-pct="90">
+          <div class="sb-header"><span>Python</span><span class="sb-pct">90%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="--w:90%"></div></div>
+        </div>
+        <div class="skill-bar-item" data-pct="80">
+          <div class="sb-header"><span>SQL</span><span class="sb-pct">80%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="--w:80%"></div></div>
+        </div>
+        <div class="skill-bar-item" data-pct="82">
+          <div class="sb-header"><span>Machine Learning</span><span class="sb-pct">82%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="--w:82%"></div></div>
+        </div>
+        <div class="skill-bar-item" data-pct="85">
+          <div class="sb-header"><span>Data Analysis</span><span class="sb-pct">85%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="--w:85%"></div></div>
+        </div>
+        <div class="skill-bar-item" data-pct="78">
+          <div class="sb-header"><span>Data Visualization</span><span class="sb-pct">78%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="--w:78%"></div></div>
+        </div>
+        <div class="skill-bar-item" data-pct="75">
+          <div class="sb-header"><span>Power BI</span><span class="sb-pct">75%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="--w:75%"></div></div>
+        </div>
+        <div class="skill-bar-item" data-pct="72">
+          <div class="sb-header"><span>Tableau</span><span class="sb-pct">72%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="--w:72%"></div></div>
+        </div>
+        <div class="skill-bar-item" data-pct="88">
+          <div class="sb-header"><span>Excel</span><span class="sb-pct">88%</span></div>
+          <div class="sb-track"><div class="sb-fill" style="--w:88%"></div></div>
+        </div>
+      </div>
+      <div class="skills-grid reveal-right">
+        <h3 class="skills-sub">Libraries & Tools</h3>
+        <div class="skill-chips-grid">
+          <div class="skill-chip">
+            <div class="skill-chip-icon">🐼</div>
+            <span>Pandas</span>
+          </div>
+          <div class="skill-chip">
+            <div class="skill-chip-icon">🔢</div>
+            <span>NumPy</span>
+          </div>
+          <div class="skill-chip">
+            <div class="skill-chip-icon">🤖</div>
+            <span>Scikit-Learn</span>
+          </div>
+          <div class="skill-chip">
+            <div class="skill-chip-icon">👁️</div>
+            <span>OpenCV</span>
+          </div>
+          <div class="skill-chip">
+            <div class="skill-chip-icon">🖼️</div>
+            <span>Tkinter</span>
+          </div>
+          <div class="skill-chip">
+            <div class="skill-chip-icon">🌐</div>
+            <span>HTML</span>
+          </div>
+          <div class="skill-chip">
+            <div class="skill-chip-icon">🎨</div>
+            <span>CSS</span>
+          </div>
+          <div class="skill-chip">
+            <div class="skill-chip-icon">⚡</div>
+            <span>JavaScript</span>
+          </div>
+        </div>
+        <!-- Mini radar chart -->
+        <div class="radar-wrap">
+          <canvas id="radarChart" width="260" height="260"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PROJECTS ===== -->
+<section class="section" id="projects">
+  <div class="container">
+    <div class="section-tag reveal-fade">// my_work</div>
+    <h2 class="section-title reveal-fade">Featured <span class="accent">Projects</span></h2>
+    <!-- Filter + Search -->
+    <div class="proj-controls reveal-fade">
+      <div class="proj-search-wrap">
+        <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        <input type="text" id="projSearch" placeholder="Search projects..." class="proj-search" />
+      </div>
+      <div class="filter-btns">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="ml">ML / AI</button>
+        <button class="filter-btn" data-filter="vision">Vision</button>
+        <button class="filter-btn" data-filter="web">Web</button>
+        <button class="filter-btn" data-filter="nlp">NLP</button>
+        <button class="filter-btn" data-filter="data">Data</button>
+      </div>
+    </div>
+    <div class="projects-grid" id="projectsGrid">
+
+      <div class="proj-card reveal-fade" data-cat="data web">
+        <div class="proj-top">
+          <div class="proj-tag">Inventory · Web</div>
+          <div class="proj-links">
+            <a href="#" class="proj-link" title="GitHub">⌥</a>
+          </div>
+        </div>
+        <h3 class="proj-title">Smart Inventory Management System</h3>
+        <p class="proj-desc">Full-featured inventory system with real-time stock tracking, automated alerts, supplier management, and analytics dashboard. Built with Python & SQL backend.</p>
+        <div class="proj-tech">
+          <span>Python</span><span>SQL</span><span>Tkinter</span><span>MySQL</span>
+        </div>
+        <div class="proj-footer">
+          <span class="proj-status active-status">● Completed</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-fade featured" data-cat="vision ml">
+        <div class="proj-badge">🏆 3rd Prize Winner</div>
+        <div class="proj-top">
+          <div class="proj-tag">Vision · ML</div>
+          <div class="proj-links"><a href="#" class="proj-link">⌥</a></div>
+        </div>
+        <h3 class="proj-title">Signature & Fingerprint Recognition</h3>
+        <p class="proj-desc">Award-winning biometric authentication system using OpenCV & machine learning. Achieves high accuracy for real-time identity verification with GUI interface.</p>
+        <div class="proj-tech">
+          <span>Python</span><span>OpenCV</span><span>Scikit-Learn</span><span>Tkinter</span>
+        </div>
+        <div class="proj-footer">
+          <span class="proj-status active-status">● Completed</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-fade" data-cat="nlp ml">
+        <div class="proj-top">
+          <div class="proj-tag">NLP · Tool</div>
+          <div class="proj-links"><a href="#" class="proj-link">⌥</a></div>
+        </div>
+        <h3 class="proj-title">Text Summarization & Translation Tool</h3>
+        <p class="proj-desc">Intelligent NLP tool that condenses lengthy documents into crisp summaries and translates across multiple languages with a clean GUI.</p>
+        <div class="proj-tech">
+          <span>Python</span><span>NLP</span><span>Tkinter</span><span>API</span>
+        </div>
+        <div class="proj-footer">
+          <span class="proj-status active-status">● Completed</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-fade" data-cat="ml vision">
+        <div class="proj-top">
+          <div class="proj-tag">AI · Vision</div>
+          <div class="proj-links"><a href="#" class="proj-link">⌥</a></div>
+        </div>
+        <h3 class="proj-title">Cartoon Image Generator</h3>
+        <p class="proj-desc">Transforms real photographs into cartoon-style artwork using image processing and neural style transfer techniques with OpenCV pipelines.</p>
+        <div class="proj-tech">
+          <span>Python</span><span>OpenCV</span><span>NumPy</span><span>PIL</span>
+        </div>
+        <div class="proj-footer">
+          <span class="proj-status active-status">● Completed</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-fade" data-cat="ml data">
+        <div class="proj-top">
+          <div class="proj-tag">ML · Agriculture</div>
+          <div class="proj-links"><a href="#" class="proj-link">⌥</a></div>
+        </div>
+        <h3 class="proj-title">Agricultural Assistant</h3>
+        <p class="proj-desc">AI-powered farming advisor that recommends crops, predicts yield, and provides weather-based guidance for optimizing agricultural output.</p>
+        <div class="proj-tech">
+          <span>Python</span><span>ML</span><span>Pandas</span><span>API</span>
+        </div>
+        <div class="proj-footer">
+          <span class="proj-status active-status">● Completed</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-fade" data-cat="vision ml">
+        <div class="proj-top">
+          <div class="proj-tag">Vision · ML</div>
+          <div class="proj-links"><a href="#" class="proj-link">⌥</a></div>
+        </div>
+        <h3 class="proj-title">Plant Disease Prediction</h3>
+        <p class="proj-desc">Deep learning model that detects plant diseases from leaf images with high accuracy, helping farmers take early corrective action.</p>
+        <div class="proj-tech">
+          <span>Python</span><span>OpenCV</span><span>CNN</span><span>Scikit-Learn</span>
+        </div>
+        <div class="proj-footer">
+          <span class="proj-status active-status">● Completed</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-fade" data-cat="ml nlp">
+        <div class="proj-top">
+          <div class="proj-tag">Voice · Email</div>
+          <div class="proj-links"><a href="#" class="proj-link">⌥</a></div>
+        </div>
+        <h3 class="proj-title">Voice Controlled Email Sender</h3>
+        <p class="proj-desc">Hands-free email client using speech recognition. Compose, address, and send emails entirely through voice commands with Python.</p>
+        <div class="proj-tech">
+          <span>Python</span><span>SpeechRecognition</span><span>smtplib</span><span>Tkinter</span>
+        </div>
+        <div class="proj-footer">
+          <span class="proj-status active-status">● Completed</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-fade" data-cat="data web">
+        <div class="proj-top">
+          <div class="proj-tag">Data · Dashboard</div>
+          <div class="proj-links"><a href="#" class="proj-link">⌥</a></div>
+        </div>
+        <h3 class="proj-title">Social Media Analytics Dashboard</h3>
+        <p class="proj-desc">Interactive analytics platform visualizing engagement metrics, follower trends, and sentiment analysis across social media platforms.</p>
+        <div class="proj-tech">
+          <span>Python</span><span>Pandas</span><span>Power BI</span><span>API</span>
+        </div>
+        <div class="proj-footer">
+          <span class="proj-status active-status">● Completed</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-fade" data-cat="ml data">
+        <div class="proj-top">
+          <div class="proj-tag">ML · Transport</div>
+          <div class="proj-links"><a href="#" class="proj-link">⌥</a></div>
+        </div>
+        <h3 class="proj-title">Automatic Train Route Planner</h3>
+        <p class="proj-desc">Smart route optimization system for train networks using graph algorithms and ML to suggest fastest, cheapest routes with real-time updates.</p>
+        <div class="proj-tech">
+          <span>Python</span><span>Graph Algo</span><span>Pandas</span><span>Tkinter</span>
+        </div>
+        <div class="proj-footer">
+          <span class="proj-status active-status">● Completed</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-fade" data-cat="web data">
+        <div class="proj-top">
+          <div class="proj-tag">Web · Inventory</div>
+          <div class="proj-links"><a href="#" class="proj-link">⌥</a></div>
+        </div>
+        <h3 class="proj-title">Inventory Management Website</h3>
+        <p class="proj-desc">Web-based inventory solution with product tracking, order management, reporting, and a responsive UI for multi-device access.</p>
+        <div class="proj-tech">
+          <span>HTML</span><span>CSS</span><span>JavaScript</span><span>SQL</span>
+        </div>
+        <div class="proj-footer">
+          <span class="proj-status active-status">● Completed</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-fade" data-cat="data ml">
+        <div class="proj-top">
+          <div class="proj-tag">Analytics</div>
+          <div class="proj-links"><a href="#" class="proj-link">⌥</a></div>
+        </div>
+        <h3 class="proj-title">Sales Forecasting Model</h3>
+        <p class="proj-desc">Time-series forecasting model predicting future sales trends using historical data, enabling data-driven business decisions.</p>
+        <div class="proj-tech">
+          <span>Python</span><span>Pandas</span><span>Scikit-Learn</span><span>Matplotlib</span>
+        </div>
+        <div class="proj-footer">
+          <span class="proj-status active-status">● Completed</span>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-fade" data-cat="data">
+        <div class="proj-top">
+          <div class="proj-tag">Visualization</div>
+          <div class="proj-links"><a href="#" class="proj-link">⌥</a></div>
+        </div>
+        <h3 class="proj-title">COVID-19 Data Visualization</h3>
+        <p class="proj-desc">Comprehensive data visualization project tracking global COVID-19 trends with interactive charts, heatmaps, and statistical analysis.</p>
+        <div class="proj-tech">
+          <span>Python</span><span>Matplotlib</span><span>Seaborn</span><span>Plotly</span>
+        </div>
+        <div class="proj-footer">
+          <span class="proj-status active-status">● Completed</span>
+        </div>
+      </div>
+
+    </div>
+    <div class="no-results" id="noResults" style="display:none">No projects found.</div>
+  </div>
+</section>
+
+<!-- ===== CERTIFICATES ===== -->
+<section class="section section-alt" id="certificates">
+  <div class="container">
+    <div class="section-tag reveal-fade">// certifications</div>
+    <h2 class="section-title reveal-fade">18+ <span class="accent">Certificates</span></h2>
+    <div class="certs-grid">
+      <div class="cert-card reveal-fade">
+        <div class="cert-ribbon">Python</div>
+        <div class="cert-icon">🐍</div>
+        <h4>Python for Data Science</h4>
+        <p>NPTEL / Coursera</p>
+        <div class="cert-verified">✓ Verified</div>
+      </div>
+      <div class="cert-card reveal-fade">
+        <div class="cert-ribbon">ML</div>
+        <div class="cert-icon">🤖</div>
+        <h4>Machine Learning</h4>
+        <p>Coursera / Stanford</p>
+        <div class="cert-verified">✓ Verified</div>
+      </div>
+      <div class="cert-card reveal-fade">
+        <div class="cert-ribbon">SQL</div>
+        <div class="cert-icon">🗄️</div>
+        <h4>SQL for Data Analysis</h4>
+        <p>HackerRank / Udemy</p>
+        <div class="cert-verified">✓ Verified</div>
+      </div>
+      <div class="cert-card reveal-fade">
+        <div class="cert-ribbon">Power BI</div>
+        <div class="cert-icon">📊</div>
+        <h4>Power BI Data Analyst</h4>
+        <p>Microsoft</p>
+        <div class="cert-verified">✓ Verified</div>
+      </div>
+      <div class="cert-card reveal-fade">
+        <div class="cert-ribbon">AI</div>
+        <div class="cert-icon">🧠</div>
+        <h4>AI Fundamentals</h4>
+        <p>IBM / Cognitive Class</p>
+        <div class="cert-verified">✓ Verified</div>
+      </div>
+      <div class="cert-card reveal-fade">
+        <div class="cert-ribbon">CV</div>
+        <div class="cert-icon">👁️</div>
+        <h4>Computer Vision</h4>
+        <p>OpenCV / Coursera</p>
+        <div class="cert-verified">✓ Verified</div>
+      </div>
+      <div class="cert-card reveal-fade">
+        <div class="cert-ribbon">Tableau</div>
+        <div class="cert-icon">📈</div>
+        <h4>Tableau Desktop Specialist</h4>
+        <p>Tableau</p>
+        <div class="cert-verified">✓ Verified</div>
+      </div>
+      <div class="cert-card reveal-fade">
+        <div class="cert-ribbon">Data</div>
+        <div class="cert-icon">📉</div>
+        <h4>Data Analysis with Python</h4>
+        <p>freeCodeCamp</p>
+        <div class="cert-verified">✓ Verified</div>
+      </div>
+      <div class="cert-card reveal-fade">
+        <div class="cert-ribbon">+10 More</div>
+        <div class="cert-icon">🏅</div>
+        <h4>And 10+ More Certificates</h4>
+        <p>Various Platforms</p>
+        <div class="cert-verified">✓ Verified</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== EXPERIENCE ===== -->
+<section class="section" id="experience">
+  <div class="container">
+    <div class="section-tag reveal-fade">// experience</div>
+    <h2 class="section-title reveal-fade">My <span class="accent">Journey</span></h2>
+    <div class="timeline">
+      <div class="tl-item reveal-left">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-period">2022 – 2025</div>
+          <h3>B.Sc. Data Science</h3>
+          <p class="tl-company">University, Mumbai</p>
+          <p>Graduated with strong focus on machine learning, data analysis, statistics, and Python programming. Completed 18+ projects during coursework.</p>
+          <div class="tl-tags"><span>Python</span><span>ML</span><span>Statistics</span><span>SQL</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal-right">
+        <div class="tl-dot"></div>
+        <div class="tl-content">
+          <div class="tl-period">2024</div>
+          <h3>Project: Signature & Fingerprint Recognition</h3>
+          <p class="tl-company">Model Making Competition</p>
+          <p>Developed an award-winning biometric authentication system that won 3rd prize in a model making competition. Implemented using OpenCV and machine learning algorithms.</p>
+          <div class="tl-tags"><span>OpenCV</span><span>Biometrics</span><span>Award Winner</span></div>
+        </div>
+      </div>
+      <div class="tl-item reveal-left">
+        <div class="tl-dot active-dot"></div>
+        <div class="tl-content">
+          <div class="tl-period">2025 – Present</div>
+          <h3>Fresher Data Scientist</h3>
+          <p class="tl-company">Open to Opportunities · Mumbai, India</p>
+          <p>Actively building projects, completing certifications, and seeking my first professional role as a Data Analyst / Data Scientist where I can contribute and grow.</p>
+          <div class="tl-tags"><span>Available Now</span><span>Full-Time</span><span>Remote / Hybrid</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ACHIEVEMENTS ===== -->
+<section class="section section-alt" id="achievements">
+  <div class="container">
+    <div class="section-tag reveal-fade">// achievements</div>
+    <h2 class="section-title reveal-fade">Awards & <span class="accent">Recognition</span></h2>
+    <div class="achieve-grid">
+      <div class="achieve-card main-achieve reveal-fade">
+        <div class="achieve-medal">🥉</div>
+        <div class="achieve-content">
+          <h3>3rd Prize — Model Making Competition</h3>
+          <p class="achieve-sub">Signature & Fingerprint Recognition System</p>
+          <p>Won third place for developing an innovative biometric authentication system using computer vision and machine learning. The project demonstrated real-world applicability in secure identity verification.</p>
+          <div class="achieve-tags"><span>Computer Vision</span><span>Machine Learning</span><span>Biometrics</span></div>
+        </div>
+      </div>
+      <div class="achieve-card reveal-fade">
+        <div class="achieve-medal">🎓</div>
+        <div class="achieve-content">
+          <h3>18+ Certifications</h3>
+          <p class="achieve-sub">Continuous Learning Journey</p>
+          <p>Earned certifications from top platforms including Coursera, Microsoft, IBM, NPTEL, and more.</p>
+        </div>
+      </div>
+      <div class="achieve-card reveal-fade">
+        <div class="achieve-medal">🚀</div>
+        <div class="achieve-content">
+          <h3>18+ Projects Built</h3>
+          <p class="achieve-sub">Self-Initiated Portfolio</p>
+          <p>Independently designed and developed 18+ projects spanning ML, AI, data science, and web applications.</p>
+        </div>
+      </div>
+      <div class="achieve-card reveal-fade">
+        <div class="achieve-medal">⚡</div>
+        <div class="achieve-content">
+          <h3>B.Sc. Data Science Graduate</h3>
+          <p class="achieve-sub">Class of 2025</p>
+          <p>Successfully completed a specialized Data Science degree with a comprehensive curriculum covering ML, statistics, and data engineering.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== RESUME ===== -->
+<section class="section resume-section" id="resume">
+  <div class="container">
+    <div class="resume-inner reveal-fade">
+      <div class="resume-text">
+        <div class="section-tag">// resume</div>
+        <h2>Download My <span class="accent">Resume</span></h2>
+        <p>Get a complete overview of my skills, education, projects, and certifications in a single document.</p>
+      </div>
+      <a href="assets/Nafees_Shaikh_Resume.pdf" download class="btn-primary resume-btn">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+        Download Resume
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CONTACT ===== -->
+<section class="section" id="contact">
+  <div class="container">
+    <div class="section-tag reveal-fade">// contact_me</div>
+    <h2 class="section-title reveal-fade">Let's <span class="accent">Connect</span></h2>
+    <div class="contact-grid">
+      <div class="contact-info reveal-left">
+        <h3>Open to Opportunities</h3>
+        <p>Whether you're looking for a Data Analyst, Data Scientist, or Python Developer — I'd love to hear from you. Let's build something great together!</p>
+        <div class="contact-details">
+          <div class="cd-item">
+            <span class="cd-icon">📧</span>
+            <a href="mailto:nafisshaikh114@gmail.com">nafisshaikh114@gmail.com</a>
+          </div>
+          <div class="cd-item">
+            <span class="cd-icon">📍</span>
+            <span>Mumbai, India</span>
+          </div>
+          <div class="cd-item">
+            <span class="cd-icon">💼</span>
+            <span>Open to Full-Time & Internship Roles</span>
+          </div>
+          <div class="cd-item">
+            <span class="cd-icon">⚡</span>
+            <span>Response within 24 hours</span>
+          </div>
+        </div>
+      </div>
+      <div class="contact-form-wrap reveal-right">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-group">
+            <label for="fname">Full Name *</label>
+            <input type="text" id="fname" placeholder="Your full name" required />
+            <span class="form-error" id="fnameErr"></span>
+          </div>
+          <div class="form-group">
+            <label for="femail">Email Address *</label>
+            <input type="email" id="femail" placeholder="your@email.com" required />
+            <span class="form-error" id="femailErr"></span>
+          </div>
+          <div class="form-group">
+            <label for="fphone">Phone Number</label>
+            <input type="tel" id="fphone" placeholder="+91 XXXXX XXXXX" />
+          </div>
+          <div class="form-group">
+            <label for="fmsg">Message *</label>
+            <textarea id="fmsg" rows="4" placeholder="Tell me about your project or opportunity..." required></textarea>
+            <span class="form-error" id="fmsgErr"></span>
+          </div>
+          <button type="submit" class="btn-primary submit-btn" id="submitBtn">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            Send via WhatsApp
+          </button>
+          <div class="form-success" id="formSuccess">
+            <div class="success-icon">✅</div>
+            <p>Opening WhatsApp... Message ready to send!</p>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <span class="nav-logo">NS<span class="accent">.</span></span>
+        <p>Building intelligent data solutions<br />from Mumbai to the World 🌏</p>
+      </div>
+      <div class="footer-links">
+        <div class="fl-col">
+          <h5>Navigate</h5>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+        </div>
+        <div class="fl-col">
+          <h5>More</h5>
+          <a href="#certificates">Certificates</a>
+          <a href="#achievements">Awards</a>
+          <a href="#contact">Contact</a>
+        </div>
+        <div class="fl-col">
+          <h5>Connect</h5>
+          <a href="https://linkedin.com/in/nafees-shaikh-441405251" target="_blank">LinkedIn</a>
+          <a href="https://github.com/nafees-shaikh" target="_blank">GitHub</a>
+          <a href="mailto:nafisshaikh114@gmail.com">Email</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2025 Nafees Shaikh. Crafted with ❤️ & Python.</span>
+      <span class="footer-tag">Data Scientist · Mumbai</span>
+    </div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
